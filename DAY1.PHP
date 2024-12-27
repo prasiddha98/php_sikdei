@@ -63,6 +63,40 @@ $username=$_POST["username"];
 echo"Dear {$username}, you have bought {$quantity}'s {$item}'s <br>";
 echo"And your Grandtotal is {$total}";
 
+
+//conditional statement
+$age=10;
+if($age>18){
+    echo "you are adult";
+}else{
+    echo "you are child";
+}
+
+//logical operator &&, ||, !
+$age=10;
+$height=5.7;
+if($age>18 && $height>5.5){
+    echo "you are adult";
+}else{
+    echo "you are child";
+}
+// for || or operator
+$age=10;
+$height=5.7;
+if($age>18 || $height>5.5){
+    echo "you are adult";
+}else{
+    echo "you are child";
+}
+//for // not operator
+$age=10;
+$height=5.7;
+if(!($age>18)){
+    echo "you are child";
+}else{
+    echo "you are adult";
+}
+
 ?>  <!-- this is how we end php --> 
 
 <!DOCTYPE html>
