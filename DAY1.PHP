@@ -50,15 +50,16 @@ $credentials = array(
     "shyam" => "456"
 );
 $username=$_POST["username"];
+$password = $_POST["password"]; //
 if(isset($credentials[$username])){
-   
-$passkey=$password = $_POST["password"];
-if($passkey==true){
-echo" The password for {$username} is {$passkey}";
-}else{
+   if ($credentials[$username]===$password){
+    echo" The password for {$username} is {$password}";
+   }else{
     echo" The password for {$username} is incorrect";
+    }
 }
-
+else {
+    echo "Error: Username '{$username}' does not exist.";
 }
 
 //operator
