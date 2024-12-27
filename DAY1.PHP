@@ -16,7 +16,7 @@
 
 echo "ram le khana khayo <br>"; //print stat with new line;<br>
 $name="ram"; //variable declaration
-echo $name; //variable print
+echo"{$name}<br>"; //variable print
 
 //data types
  
@@ -51,6 +51,17 @@ echo $a>$b; //false
 echo $a<$b; //true
 echo $a>=$b; //false
 echo $a<=$b; //true
+
+
+// string operator
+$a="ram";
+$b="world";
+echo "{$a} to {$b} <br>"; //hello to world
+echo "dear {$a}, eat your food."; // dear ram, eat your food. 
+
+//learn about get and post method
+//get method
+
 
 
 ?><!-- this is how we end php --> 
