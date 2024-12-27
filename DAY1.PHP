@@ -52,6 +52,17 @@ $username=$_GET["username"];
 echo " This is done through get method. {$username}" ;
 //post method
 echo $_POST["username"];
+
+$item="apple";
+$price=5;
+$total=null;
+$quantity=$_POST["quantity"];
+$total=$price * $quantity;
+$username=$_POST["username"];
+
+echo"Dear {$username}, you have bought {$quantity}'s {$item}'s <br>";
+echo"And your Grandtotal is {$total}";
+
 ?>  <!-- this is how we end php --> 
 
 <!DOCTYPE html>
@@ -77,5 +88,15 @@ echo $_POST["username"];
         <input type="text" id="name" name="username">
         <button type="submit">Submit with POST</button>
     </form>
+    <!-- example, learning post method-->
+    <form action="DAY1.PHP" method="POST">
+    <label for="username">username</label>
+    <input type="text" id="username" name="username">
+    <label for="quantity">quantity</label>
+    <input type="number" id="quantity" name="quantity">
+    <button type="submit">Grand_Total</button>
+
+    </form>
+      
 </body>
 </html>
