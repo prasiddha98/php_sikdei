@@ -111,9 +111,11 @@ echo"And your Grandtotal is {$total}";
 
 
 //conditional statement
+
 $age=10;
 if($age>18){
     echo "you are adult";
+    
 }else{
     echo "you are child";
 }
