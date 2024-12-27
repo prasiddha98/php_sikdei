@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- Day first covered with basic stuffs!! : this is how cmt is done in html  --> 
-     
-</body>
-</html>
-
 <?php // this is how we start php
 // this is how comment is done in php
 
@@ -59,9 +46,36 @@ $b="world";
 echo "{$a} to {$b} <br>"; //hello to world
 echo "dear {$a}, eat your food."; // dear ram, eat your food. 
 
-//learn about get and post method
+
 //get method
+$username=$_GET["username"];
+echo " This is done through get method. {$username}" ;
+//post method
+echo $_POST["username"];
+?>  <!-- this is how we end php --> 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Day first covered with basic stuffs!! : this is how cmt is done in html  --> 
+     <!-- get and post method-->
+    <h2>GET Method</h2>
+    <form action="DAY1.PHP" method="GET">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="username">
+        <button type="submit">Submit with GET</button>
+    </form>
 
-
-?><!-- this is how we end php --> 
+    <h2>POST Method</h2>
+    <form action="DAY1.PHP" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="username">
+        <button type="submit">Submit with POST</button>
+    </form>
+</body>
+</html>
