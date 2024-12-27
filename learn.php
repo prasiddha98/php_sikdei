@@ -64,6 +64,7 @@ if(isset($_POST['total'])){
        $total=$price * $quantity;
        $username=$_SESSION['username'];
        unset($_POST['total']);
+    
 
        echo"Dear {$username}, your total quantity is {$quantity} <br>";
        echo"your total amount for {$quantity}'s {$item}'s is {$total} <br>";
