@@ -15,6 +15,51 @@ $Active=true; //boolean
 //array
 $fruits=array("apple","banana","mango");
 echo $fruits[0]; //apple
+//to add element in array
+$fruits[0]="orange";
+echo $fruits[0]; //orange
+array_push($fruits,"grapes");
+echo $fruits[3]; //grapes
+//foreach loop
+$fruits=array("apple","banana","mango");
+foreach($fruits as $fruit){
+    echo $fruit;
+}
+//for push
+$fruits=array("apple","banana","mango");
+array_push($fruits,"grapes");
+foreach($fruits as $fruit){
+    echo $fruit;
+}
+
+//associative array
+$person=array("name"=>"ram","age"=>10);
+echo $person["name"]; //ram
+echo $person["age"]; //10
+//to add element in associative array
+$person["name"]='shyam';
+echo $person["name"]; //shyam
+//for printing multiple key value pair
+foreach($person as $key=> $value){
+    echo "{$key} is {$value}";
+} 
+
+// made form in html part and learning associative array
+$credentials = array(
+    "ram" => "123",
+    "shyam" => "456"
+);
+$username=$_POST["username"];
+if(isset($credentials[$username])){
+   
+$passkey=$password = $_POST["password"];
+if($passkey==true){
+echo" The password for {$username} is {$passkey}";
+}else{
+    echo" The password for {$username} is incorrect";
+}
+
+}
 
 //operator
 $a=10;
@@ -97,6 +142,67 @@ if(!($age>18)){
     echo "you are adult";
 }
 
+//switch case
+$day="monday";
+switch($day){
+    case "sunday":
+        echo "today is holiday";
+        break;
+    case "monday":
+        echo "today is working day";
+        break;
+    case "tuesday":
+        echo "today is working day";
+        break;
+    case "wednesday":
+        echo "today is working day";
+        break;
+    case "thursday":
+        echo "today is working day";
+        break;
+    case "friday":
+        echo "today is working day";
+        break;
+    case "saturday":
+        echo "today is working day";
+        break;
+    default:
+        echo "invalid day";
+}
+
+//loop
+//for loop
+for($i=0;$i<5;$i++){
+    echo $i;
+}
+//while loop
+$i=0;
+while($i<5){
+    echo $i;
+    $i++;
+}
+//do while loop
+$i=0;
+do{
+    echo $i;
+    $i++;
+}while($i<5);
+
+
+
+//function
+function add($a,$b){
+    return $a+$b;
+}
+echo add(10,20); //30
+
+//array function
+$fruits=array("apple","banana","mango");
+echo count($fruits); //3
+
+
+
+
 ?>  <!-- this is how we end php --> 
 
 <!DOCTYPE html>
@@ -131,6 +237,13 @@ if(!($age>18)){
     <button type="submit">Grand_Total</button>
 
     </form>
-      
+    <!--learning associative array-->
+ <form action="DAY1.PHP" method="POST">
+    <label for="username">username</label>
+    <input type="text" id="username" name="username">
+    <label for="password">password</label>
+    <input type="password" id="password" name="password">
+    <button type="submit">La password deu</button>
+ </form>   
 </body>
 </html>
