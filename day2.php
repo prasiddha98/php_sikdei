@@ -6,11 +6,6 @@ $name="ram";
 echo isset($name); //true
 echo isset($age); //false
 
-if(isset($_POST["name"]) && isset($_POST["password"])){
-    echo "name is set";
-    echo "password is set";
-}
-
 //empty huda true return garxa
 
 
@@ -21,13 +16,27 @@ $name="ram";
 echo empty($name); //false
 echo empty($age); //true
 
-if(empty($_POST['name']) && empty($_POST['password'])){
+
+
+
+$username = "";
+$password = "";
+
+if(isset($_POST["name"]) && isset($_POST["password"])){
+   $username=$_POST["name"];
+    $password=$_POST["password"];
+    echo "name is $username and password is $password";
+    // foreach($_POST as $key => $value){
+    //     echo "$Key = $value";
+    // }
+}
+   elseif(empty($username) && empty($password)){
     echo "name is empty";
     echo "password is empty";
 }
-
-
-
+   else{
+    echo"...";
+}
 ?>
 
 <!-- lets create a form-->
