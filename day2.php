@@ -190,6 +190,23 @@ if(isset($_POST["logout"])){
 // header("Location:session.php");
 // exit;
 
+
+
+
+
+
+
+
+//server
+// echo $_SERVER["PHP_SELF"];
+// echo $_SERVER["SERVER_NAME"];
+// echo $_SERVER["HTTP_HOST"];
+// echo $_SERVER["REQUEST_METHOD"];
+
+foreach($_SERVER as $key => $value){
+    echo "$key = $value <br>";
+}
+
 ?>
 
 
@@ -217,7 +234,7 @@ if(isset($_POST["logout"])){
     }
     ?>
 
-    <form action=day2.php method="post">
+    <form action=<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>.php method="post"> <!-- file ja sukei hos incase nam change bhayeni server global var le correct banaidinxa(file path hold garxa) -->
       <label for="name">Name:</label>
       <input type="text" name="name" id="name">
       <label for="password">Password:</label>
