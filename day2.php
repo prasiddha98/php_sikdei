@@ -163,6 +163,19 @@ if(isset($_POST["submit"])){
     $username=filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
     echo $username;}
 
+
+//learning cookie
+
+setcookie("name","ram",time() +86400, "/");
+setcookie("username","shyam",time() +86400, "/");
+
+
+
+
+
+
+
+
 ?>
 
 <!-- lets create a form-->
@@ -174,7 +187,20 @@ if(isset($_POST["submit"])){
     <title>Title</title>
  </head>
  <body>
-    
+
+
+   <h2>investigate cookie</h2>
+    <?php
+    if(isset($_COOKIE["name"])&& isset($_COOKIE["username"]))
+    {
+        echo "cookie is set";
+        echo $_COOKIE["name"];
+        echo $_COOKIE["username"];
+    }
+    else{
+        echo "cookie is not set";
+    }
+    ?>
 
     <form action=day2.php method="post">
       <label for="name">Name:</label>
