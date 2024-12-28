@@ -1,19 +1,25 @@
+
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 // PHP connection to the database using MySQLi extension
 
-$db_server = "localhost";
+$db_server = "127.0.0.1";
 $db_username = "root";
 $db_password = "";
 $db_name = "firstdatabase_hai";
 
-// Establishing connection
-$conn = mysqli_connect($db_server, $db_username, $db_password, $db_name);
+// Establishing connection with exception handling
+try{
 
-// Check if connection is successful
-if ($conn) {
-    echo "Connection established successfully.";
-} else {
-    // Displaying error message if connection fails
-    echo "Connection failed: " . mysqli_connect_error();
+
+$conn = mysqli_connect($db_server, $db_username, $db_password, $db_name);}
+
+catch (mysqli_sql_exception) {
+    echo "Connection failed ";
 }
+if ($conn) {
+        echo "Connection established successfully.";
+  }
 ?>
