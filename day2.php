@@ -207,6 +207,23 @@ foreach($_SERVER as $key => $value){
     echo "$key = $value <br>";
 }
 
+//passwword hashing
+
+$password = "password";
+$hash = password_hash($password, PASSWORD_DEFAULT);
+echo $hash;
+
+if(password_verify("ram", $hash)){
+    echo "password is correct";
+}
+else{
+    echo "password is incorrect";
+}
+
+
+
+
+
 ?>
 
 
@@ -234,11 +251,12 @@ foreach($_SERVER as $key => $value){
     }
     ?>
 
-    <form action=<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>.php method="post"> <!-- file ja sukei hos incase nam change bhayeni server global var le correct banaidinxa(file path hold garxa) -->
+    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
+         <!-- file ja sukei hos incase nam change bhayeni server global var le correct banaidinxa(file path hold garxa) -->
       <label for="name">Name:</label>
       <input type="text" name="name" id="name">
       <label for="password">Password:</label>
-      <input type="password" name="password"id="password">
+      <input type="password" name="password" id="password">
       <button type="submit">Login</button>
       <!--<script>alert("login successful")</script>-->
 
