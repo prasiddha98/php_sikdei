@@ -37,6 +37,20 @@ if(isset($_POST["name"]) && isset($_POST["password"])){
    else{
     echo"...";
 }
+
+
+if(isset($_POST["pay"])){
+   if(isset($_POST["visaname"])){
+    $visaname = $_POST["visaname"];
+    echo "$visaname is selected";}
+    else{
+        echo "please select a payment method";
+    }
+}
+
+
+
+
 ?>
 
 <!-- lets create a form-->
@@ -61,5 +75,13 @@ if(isset($_POST["name"]) && isset($_POST["password"])){
 
     </form>
     
- </body>
+    <form action="day2.php" method="post">
+        <label for="visa">Visa</label>
+        <input type="radio" name="visaname" value="visa">
+        <label for="mastercard">Mastercard</label>
+        <input type="radio" name="visaname" value="mastercard">
+        <label for="paypal">Paypal</label>
+        <input type="radio" name="visaname" value="paypal">
+        <button type="submit" name="pay">Pay</button>
+    </form>
  </html>
