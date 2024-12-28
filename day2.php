@@ -69,6 +69,73 @@ if(isset($_POST["submit"])){
 }
 
 
+
+//function
+//functio  to check if a number is even or odd
+function check($number){
+    if($number%2==0){
+        echo "$number is even";
+    }
+    else{
+        echo "$number is odd";
+    }
+}
+echo check(6);
+
+
+//string function
+
+//strlen
+echo strlen("Hello World"); // 11
+
+//str_word_count
+echo str_word_count("Hello World"); // 2
+
+//strrev
+echo strrev("Hello World"); // dlroW olleH
+
+//strpos
+echo strpos("Hello World", "World"); // 6
+
+//str_replace
+echo str_replace("World", "PHP", "Hello World"); // Hello PHP
+
+//strtolower
+echo strtolower("HELLO WORLD"); // hello world
+
+//strtoupper
+echo strtoupper("hello world"); // HELLO WORLD
+
+//ucfirst
+echo ucfirst("hello world"); // Hello world
+
+//ucwords
+echo ucwords("hello world"); // Hello World
+
+//explode
+echo(explode(" ", "Hello World")); // Array 
+print_r(explode(" ", "Hello World")); // Array ( [0] => Hello [1] => World )
+
+//implode
+echo implode("-", array("Hello", "World")); // Hello-World
+
+//trim
+echo trim(" Hello World        "); // Hello World
+
+//substr
+echo substr("Hello World", 6, 10); // World
+
+//str_repeat
+echo str_repeat("Hello", 3); // HelloHelloHello
+
+//str_shuffle
+echo str_shuffle("Hello World"); // Randomly shuffled string
+
+
+
+
+
+
 ?>
 
 <!-- lets create a form-->
