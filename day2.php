@@ -144,7 +144,7 @@ echo str_shuffle("Hello World"); // Randomly shuffled string
 
 if(isset($_POST["submit"])){
     $username=$_POST["username"];
-    $username=filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+    $username=filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
     echo $username;
 }
 if(isset($_POST["submit"])){
@@ -160,8 +160,8 @@ if(isset($_POST["submit"])){
 
 if(isset($_POST["submit"])){
     $username=$_POST["username"];
-    $username=filter_input(INPUT_POST, "username", FILTER_VALIDATE_STRING);
-    echo $username;
+    $username=filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+    echo $username;}
 
 ?>
 
