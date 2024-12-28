@@ -224,8 +224,21 @@ else{
 
 
 
+//inserting opr in database with exception handling
+include ("database.php");
 
 
+try{
+$sql = "INSERT INTO table_name(id, Age, user, password) VALUES(3, 20, 'hari', '123123')";
+mysqli_query($conn, $sql);
+echo "data inserted successfully";
+}
+catch(mysqli_sql_exception){
+    echo "error";
+}
+
+
+mysqli_close($conn);
 
 
 
