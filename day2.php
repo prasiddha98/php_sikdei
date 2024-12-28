@@ -135,6 +135,33 @@ echo str_shuffle("Hello World"); // Randomly shuffled string
 
 
 
+// sanitize and validate data
+
+//sanitize data
+//remove any illegal character from a string
+//remove or encode special characters
+//remove or encode html tags
+
+if(isset($_POST["submit"])){
+    $username=$_POST["username"];
+    $username=filter_input(INPUT_POST, "username", FILTER_SANITIZE_STRING);
+    echo $username;
+}
+if(isset($_POST["submit"])){
+    $age=filter_input(INPUT_POST, "age", FILTER_SANITIZE_NUMBER_INT);
+    echo $age;
+}
+
+
+//validate data
+//check if the data is in proper format
+//check if the data is in proper range
+//check if the data is in proper length
+
+if(isset($_POST["submit"])){
+    $username=$_POST["username"];
+    $username=filter_input(INPUT_POST, "username", FILTER_VALIDATE_STRING);
+    echo $username;
 
 ?>
 
@@ -155,7 +182,7 @@ echo str_shuffle("Hello World"); // Randomly shuffled string
       <label for="password">Password:</label>
       <input type="password" name="password"id="password">
       <button type="submit">Login</button>
-      <script>alert("login successful")</script>
+      <!--<script>alert("login successful")</script>-->
 
 
     </form>
@@ -179,5 +206,15 @@ echo str_shuffle("Hello World"); // Randomly shuffled string
        <input type="checkbox" name="english" value="English">
        <button type="submit" name="submit">Submit</button>
     </form>
+    <form action="day2.php" method="post">
+       <label for=username>Username</label>
+       <input type="text" name="username">
+       <label for=age>Age</label>
+       <input type="number" name="age">
+       <button type="submit" name="submit">Submit</button>
+    </form>
+
+
+
     </body>
  </html>
