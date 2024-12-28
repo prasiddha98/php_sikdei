@@ -224,24 +224,27 @@ else{
 
 
 
-//inserting opr in database with exception handling
-include ("database.php");
+// //inserting opr in database with exception handling
+// include ("database.php");
 
 
-try{
-$sql = "INSERT INTO table_name(id, Age, user, password) VALUES(3, 20, 'hari', '123123')";
-mysqli_query($conn, $sql);
-echo "data inserted successfully";
-}
-catch(mysqli_sql_exception){
-    echo "error";
-}
+// try{
+// $sql = "INSERT INTO table_name(id, Age, user, password) VALUES(3, 20, 'hari', '123123')";
+// mysqli_query($conn, $sql);
+// echo "data inserted successfully";
+// }
+// catch(mysqli_sql_exception){
+//     echo "error";
+// }
+//php query mysql
+include("database.php");
+$sql="SELECT * FROM table_name WHERE id=1";
+$result = mysqli_query($conn, $sql);
+$dekhau=mysqli_fetch_assoc($result);
 
-
-mysqli_close($conn);
-
-
-
+foreach($dekhau as $key => $value){
+    echo "$key: $value<br>";
+} mysqli_close($conn);
 
 
 
