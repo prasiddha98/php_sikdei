@@ -170,13 +170,28 @@ setcookie("name","ram",time() +86400, "/");
 setcookie("username","shyam",time() +86400, "/");
 
 
+// learning session >> a user is assigned a unique session id which is stored in a cookie on the user's computer
 
-
-
-
-
+// content is moved to file session.php
+// if a user succesfully logs inb , we redirect user to this page; day2.php
 
 ?>
+//signout from here
+<?php
+session_start();
+echo "session name is ". $_SESSION["name"];
+echo  "session password is" . $_SESSION["password"];
+if(isset($_POST["logout"])){
+    session_destroy();
+    header("Location:session.php");
+    exit;
+}
+
+// header("Location:session.php");
+// exit;
+
+?>
+
 
 <!-- lets create a form-->
  <!DOCTYPE html>
@@ -239,7 +254,10 @@ setcookie("username","shyam",time() +86400, "/");
        <input type="number" name="age">
        <button type="submit" name="submit">Submit</button>
     </form>
-
+    <form action="day2.php" method="post">
+    
+     <button type="submit" name="logout">LOgout</button>
+    </form>
 
 
     </body>
