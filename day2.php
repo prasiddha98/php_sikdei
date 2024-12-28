@@ -38,6 +38,7 @@ if(isset($_POST["name"]) && isset($_POST["password"])){
     echo"...";
 }
 
+//radio button
 
 if(isset($_POST["pay"])){
    if(isset($_POST["visaname"])){
@@ -48,7 +49,24 @@ if(isset($_POST["pay"])){
     }
 }
 
-
+//checkbox
+if(isset($_POST["submit"])){
+    if(isset($_POST["maths"])){
+        $math = $_POST["maths"];
+        echo "$math is selected";
+    }
+    elseif(isset($_POST["science"])){
+        $science = $_POST["science"];
+        echo "$science is selected";
+    }
+    elseif(isset($_POST["english"])){
+       $english = $_POST["english"];
+        echo "$english is selected";
+    }
+    else{
+        echo "please select a subject";
+    }
+}
 
 
 ?>
@@ -84,4 +102,15 @@ if(isset($_POST["pay"])){
         <input type="radio" name="visaname" value="paypal">
         <button type="submit" name="pay">Pay</button>
     </form>
+
+    <form action="day2.php" method="post">
+       <label for=maths>Maths</label>
+       <input type="checkbox" name="maths" value="Math">
+       <label for="science">Science</label>
+       <input type="checkbox" name="science" value="Science">
+       <label for="english">English</label>
+       <input type="checkbox" name="english" value="English">
+       <button type="submit" name="submit">Submit</button>
+    </form>
+    </body>
  </html>
