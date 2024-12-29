@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome page</title>
+    <title>SITENAME</title>
     <style>
         nav ul{
             display:flex; justify-content:center;list-style-type:none; background-color:black;
@@ -22,9 +22,7 @@ session_start();
             color: white;
             transition: transform 0.5s ease;
         }
-        nav ul li:hover {
-            /* background-color: grey; */
-        }
+    
         nav ul li:hover > a {
             transform: translate(0, -5px);
             text-shadow: 5px 5px 2px grey;
